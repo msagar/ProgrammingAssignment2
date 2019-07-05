@@ -3,6 +3,12 @@
 
 
 # Function that will create a list that contains functions to handle the underlying matrix it stores.
+
+# Example how to use the functions below:
+#
+# bigmatrix = matrix(rnorm(10000),nrow = 100, ncol = 100)
+# cacheSolve(makeCacheMatrix(bigmatrix))
+
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
         setmatrix <- function(y) {
