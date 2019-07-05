@@ -1,8 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+
 # Script to calculate inverse of a invertible matrix with optimization to allow caching of already calculated inverse of the matrix.
 
-## Write a short comment describing this function
+
 # Function that will create a list that contains functions to handle the underlying matrix it stores.
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
@@ -20,8 +19,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+
 ## Function that solves the equation for x if the inverse isn't already calculated.
+
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         
