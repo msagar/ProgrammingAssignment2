@@ -1,6 +1,6 @@
 ## Put comments here that give an overall description of what your
 ## functions do
-
+# Script to calculate inverse of a invertible matrix with optimization to allow caching of already calculated inverse of the matrix.
 
 ## Write a short comment describing this function
 # Function that will create a list that contains functions to handle the underlying matrix it stores.
@@ -11,10 +11,10 @@ makeCacheMatrix <- function(x = matrix()) {
                 m <<- NULL
         }
         getmatrix <- function() { x }
-        calculateinverse <- function(inv) { m <<- inv }
+        setinverse <- function(inv) { m <<- inv }
         getinverse <- function() { m }
         list(setmatrix = setmatrix, getmatrix = getmatrix,
-             calculateinverse = calculateinverse,
+             setinverse = setinverse,
              getinverse = getinverse)
 
 }
@@ -30,7 +30,7 @@ cacheSolve <- function(x, ...) {
                 message("getting calculated inverse")
                 return(inv)
         }
-        data <- x$get()
+        data <- x$getmatrix()
         inv<- solve(data)
         x$setinverse(inv)
         inv
